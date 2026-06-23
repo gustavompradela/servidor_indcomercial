@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2026/06/07 21:46:55.000.847,C:\Projetos\Delphi\servidor_indcomercial\servidor_Indcomercial.dproj=C:\Users\gusta\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2026/06/07 22:12:59.000.897,=C:\Projetos\Delphi\servidor_indcomercial\Unit1.pas</Transaction>
+    <Transaction>2026/06/07 22:15:06.000.800,C:\Projetos\Delphi\servidor_indcomercial\Unit1.dfm=C:\Projetos\Delphi\servidor_indcomercial\src\providers\Providers.Connection.dfm</Transaction>
+    <Transaction>2026/06/07 22:15:06.000.800,C:\Projetos\Delphi\servidor_indcomercial\Unit1.pas=C:\Projetos\Delphi\servidor_indcomercial\src\providers\Providers.Connection.pas</Transaction>
+    <Transaction>2026/06/09 19:51:28.000.685,=C:\Projetos\Delphi\servidor_indcomercial\Unit1.pas</Transaction>
+    <Transaction>2026/06/09 19:52:06.000.534,C:\Projetos\Delphi\servidor_indcomercial\src\providers\Providers.Cadastro.pas=C:\Projetos\Delphi\servidor_indcomercial\Unit1.pas</Transaction>
+    <Transaction>2026/06/09 19:52:06.000.534,C:\Projetos\Delphi\servidor_indcomercial\src\providers\Providers.Cadastro.dfm=C:\Projetos\Delphi\servidor_indcomercial\Unit1.dfm</Transaction>
+    <Transaction>2026/06/11 20:04:23.000.046,=C:\Projetos\Delphi\servidor_indcomercial\Unit1.pas</Transaction>
+    <Transaction>2026/06/11 20:05:44.000.461,C:\Projetos\Delphi\servidor_indcomercial\Unit1.dfm=C:\Projetos\Delphi\servidor_indcomercial\src\services\Services.Produto.dfm</Transaction>
+    <Transaction>2026/06/11 20:05:44.000.461,C:\Projetos\Delphi\servidor_indcomercial\Unit1.pas=C:\Projetos\Delphi\servidor_indcomercial\src\services\Services.Produto.pas</Transaction>
+    <Transaction>2026/06/14 19:43:22.000.384,=C:\Projetos\Delphi\servidor_indcomercial\Unit1.pas</Transaction>
+    <Transaction>2026/06/14 19:44:46.000.785,C:\Projetos\Delphi\servidor_indcomercial\src\controllers\Controllers.Produto.pas=C:\Projetos\Delphi\servidor_indcomercial\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

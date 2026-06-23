@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 [17/junho/2026 21:50:54.876] PostmanRuntime/7.53.0 "GET /produtos/125555 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [17/junho/2026 21:50:59.035] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:51:40.559] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:51:46.656] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:52:00.931] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:53:06.247] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:53:25.217] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:53:40.496] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:54:09.612] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:54:29.458] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 21:55:03.843] PostmanRuntime/7.53.0 "POST /produtos HTTP/1.1" 201 0
+0:0:0:0:0:0:0:1 [17/junho/2026 22:07:34.765] PostmanRuntime/7.53.0 "GET /produtos/1 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 22:12:51.745] PostmanRuntime/7.53.0 "PUT /produtos/1 HTTP/1.1" 400 113
+0:0:0:0:0:0:0:1 [17/junho/2026 22:14:54.295] PostmanRuntime/7.53.0 "PUT /produtos/1 HTTP/1.1" 201 0
+0:0:0:0:0:0:0:1 [17/junho/2026 22:15:08.092] PostmanRuntime/7.53.0 "GET /produtos/1 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [17/junho/2026 22:15:22.662] PostmanRuntime/7.53.0 "PUT /produtos/1 HTTP/1.1" 201 0
+0:0:0:0:0:0:0:1 [17/junho/2026 22:15:36.560] PostmanRuntime/7.53.0 "GET /produtos/1 HTTP/1.1" 200 0

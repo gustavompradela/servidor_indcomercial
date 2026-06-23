@@ -1,0 +1,82 @@
+unit Controllers.Produto;
+
+interface
+
+uses Horse;
+
+procedure RegistrarRota;
+
+implementation
+
+uses Services.Produto, system.JSON;
+
+procedure ListarProdutos(Req: THorseRequest; Res: ThorseResponse; Next: TProc);
+var
+  LService: TServiceProduto;
+begin
+  LService := TServiceProduto.Create();
+  try
+    Res.Send('');
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure ObterProduto(Req: THorseRequest; Res: ThorseResponse; Next: TProc);
+var
+  LService: TServiceProduto;
+begin
+  LService := TServiceProduto.Create();
+  try
+    Res.Send('');
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure CadastrarProduto(Req: THorseRequest; Res: ThorseResponse; Next: TProc);
+var
+  LService: TServiceProduto;
+begin
+  LService := TServiceProduto.Create();
+  try
+    Res.Send('');
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure AlterarProduto(Req: THorseRequest; Res: ThorseResponse; Next: TProc);
+var
+  LService: TServiceProduto;
+begin
+  LService := TServiceProduto.Create();
+  try
+    Res.Send('');
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure DeletarProduto(Req: THorseRequest; Res: ThorseResponse; Next: TProc);
+var
+  LService: TServiceProduto;
+begin
+  LService := TServiceProduto.Create();
+  try
+    Res.Send('');
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure RegistrarRota;
+begin
+   THorse.Get('/produtos', ListarProdutos );
+   THorse.Get('/produtos/:id', ObterProduto);
+   THorse.POST('/produtos', CadastrarProduto);
+   THorse.Put('/produtos/:id', AlterarProduto );
+   THorse.Delete('/produtos/:id', DeletarProduto);
+end;
+
+end.

@@ -1,0 +1,15 @@
+object ProvidersConnection: TProvidersConnection
+  Height = 288
+  Width = 399
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      'ConnectionDef=server_indcomercial')
+    LoginPrompt = False
+    Left = 104
+    Top = 80
+  end
+  object FDPhysFBDriverLink: TFDPhysFBDriverLink
+    Left = 104
+    Top = 168
+  end
+end

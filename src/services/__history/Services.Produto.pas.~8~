@@ -1,0 +1,89 @@
+unit Services.Produto;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Providers.Cadastro, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.ConsoleUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Phys.IBBase;
+
+type
+  TServiceProduto = class(TProvidersCadastro)
+    qryPesquisaCOD_PRODUTO: TIntegerField;
+    qryPesquisaCOD_GRUPO: TIntegerField;
+    qryPesquisaCOD_MARCA: TIntegerField;
+    qryPesquisaCOD_COR: TIntegerField;
+    qryPesquisaNOME: TStringField;
+    qryPesquisaCOD_UNIDADE_ENTRADA: TStringField;
+    qryPesquisaCOD_UNIDADE_SAIDA: TStringField;
+    qryPesquisaCONVERSAO: TFloatField;
+    qryPesquisaTIPO_CONVERSAO: TStringField;
+    qryPesquisaPRODUTO_BALANCA: TStringField;
+    qryPesquisaSITUACAO: TSmallintField;
+    qryPesquisaTIPO_PRODUTO: TSmallintField;
+    qryPesquisaDT_SITUACAO: TSQLTimeStampField;
+    qryPesquisaCOD_EXIBICAO: TStringField;
+    qryPesquisaGRUPO: TStringField;
+    qryPesquisaCOR: TStringField;
+    qryPesquisaMARCA: TStringField;
+    qryPesquisaUNIDADE_ENTRADA: TStringField;
+    qryPesquisaUNIDADE_SAIDA: TStringField;
+    qryPesquisaCOD_GRUPO_PAI: TIntegerField;
+    qryPesquisaGRUPO_PAI: TStringField;
+    qryPesquisaCOD_EXIBICAO_PAI: TStringField;
+    qryPesquisaNCM: TStringField;
+    qryPesquisaCOD_GRUPO_NCM: TIntegerField;
+    qryPesquisaGRUPO_NCM: TStringField;
+    qryPesquisaCOD_UNIDADE_NF: TStringField;
+    qryPesquisaUNIDADE_NF: TStringField;
+    qryPesquisaIMPRIMIR_TABELA_PRECO: TSmallintField;
+    qryPesquisaCOMISSAO: TFloatField;
+    qryPesquisaMINIMO_FATURAMENTO: TFloatField;
+    qryPesquisaUSA_GRADE: TSmallintField;
+    qryPesquisaCOD_GRADE: TIntegerField;
+    qryPesquisaUSA_CARGA: TSmallintField;
+    qryPesquisaCOD_UNIDADE_CARGA: TStringField;
+    qryPesquisaTIPO_CONVERSAO_CARGA: TStringField;
+    qryPesquisaCONVERSAO_CARGA: TFloatField;
+    qryPesquisaUNIDADE_CARGA: TStringField;
+    qryPesquisaCOMISSAO_ABAIXO: TFloatField;
+    qryPesquisaOBSERVACAO: TMemoField;
+    qryPesquisaATUALIZAR: TSmallintField;
+    qryPesquisaCOD_GRUPO_CEST: TIntegerField;
+    qryPesquisaCEST: TStringField;
+    qryPesquisaGRUPO_CEST: TStringField;
+    qryPesquisaCOD_BARRAS: TStringField;
+    qryPesquisaEXIBIR_VENDA: TSmallintField;
+    qryPesquisaEXIBIR_PONTO_VENDA: TSmallintField;
+    qryPesquisaEXIBIR_FORCA_VENDA: TSmallintField;
+  protected
+
+  private
+    { Private declarations }
+  public
+
+  end;
+
+var
+  ServiceProduto: TServiceProduto;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+{ TProvidersCadastro1 }
+
+
+{ TProvidersCadastro1 }
+
+
+{ TProvidersCadastro1 }
+
+
+
+end.

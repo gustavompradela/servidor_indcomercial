@@ -1,0 +1,25 @@
+unit Providers.Connection;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TProvidersConnection = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  ProvidersConnection: TProvidersConnection;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+end.

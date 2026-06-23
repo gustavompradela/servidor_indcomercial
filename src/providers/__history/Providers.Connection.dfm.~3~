@@ -1,0 +1,8 @@
+object ProvidersConnection: TProvidersConnection
+  Height = 288
+  Width = 399
+  object FDConnection: TFDConnection
+    Left = 104
+    Top = 80
+  end
+end

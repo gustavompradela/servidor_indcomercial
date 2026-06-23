@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 [22/junho/2026 20:52:31.582] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [22/junho/2026 21:04:39.126] PostmanRuntime/7.53.0 "PUT /produtos/1 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [22/junho/2026 21:04:55.343] PostmanRuntime/7.53.0 "GET /produtos/1 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [22/junho/2026 21:05:08.219] PostmanRuntime/7.53.0 "PUT /produtos/1 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [22/junho/2026 21:05:19.430] PostmanRuntime/7.53.0 "GET /produtos/1 HTTP/1.1" 200 0
