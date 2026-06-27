@@ -1,4 +1,4 @@
-unit Controllers.Almoxarifado;
+﻿unit Controllers.Almoxarifado;
 
 interface
 
@@ -182,11 +182,14 @@ end;
 
 procedure RegistrarRota;
 begin
-   THorse.Get('/almoxarifados', ListarAlmoxarifados);
-   THorse.Get('/almoxarifados/:id', ObterAlmoxarifado);
-   THorse.Post('/almoxarifados', CadastrarAlmoxarifado);
-   THorse.Put('/almoxarifados/:id', AlterarAlmoxarifado);
-   THorse.Delete('/almoxarifados/:id', DeletarAlmoxarifado);
+    THorse
+     .Group
+        .Prefix(C_PREFIX)
+         .Get('/almoxarifados', ListarAlmoxarifados)
+         .Get('/almoxarifados/:id', ObterAlmoxarifado)
+         .Post('/almoxarifados', CadastrarAlmoxarifado)
+         .Put('/almoxarifados/:id', AlterarAlmoxarifado)
+         .Delete('/almoxarifados/:id', DeletarAlmoxarifado);
 end;
 
 end.

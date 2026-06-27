@@ -40,6 +40,8 @@ begin
 
 
   THorse
+    .Group
+    .Prefix(C_PREFIX)
     .Get('/healthcheck',
       procedure (Req: THorseRequest; Res: THorseResponse; Next: TProc)
       begin
@@ -48,7 +50,7 @@ begin
   )
   .Get('/version', procedure (Req: THorseRequest; Res: THorseResponse; Next: TProc)
       begin
-        Res.Send('API funcionando');
+        Res.Send(VERSAO_API);
       end
   );
 

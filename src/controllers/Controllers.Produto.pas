@@ -183,11 +183,14 @@ end;
 
 procedure RegistrarRota;
 begin
-   THorse.Get('/produtos', ListarProdutos );
-   THorse.Get('/produtos/:id', ObterProduto);
-   THorse.POST('/produtos', CadastrarProduto);
-   THorse.Put('/produtos/:id', AlterarProduto );
-   THorse.Delete('/produtos/:id', DeletarProduto);
+   THorse
+     .Group
+        .Prefix(C_PREFIX)
+         .Get('/produtos', ListarProdutos)
+         .Get('/produtos/:id', ObterProduto)
+         .Post('/produtos', CadastrarProduto)
+         .Put('/produtos/:id', AlterarProduto)
+         .Delete('/produtos/:id', DeletarProduto);
 end;
 
 end.

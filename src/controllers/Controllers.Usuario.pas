@@ -181,11 +181,14 @@ end;
 
 procedure RegistrarRota;
 begin
-  THorse.Get('/usuarios', ListarUsuarios);
-  THorse.Get('/usuarios/:id', ObterUsuario);
-  THorse.Post('/usuarios', CadastarUsuarios);
-  THorse.Put('/usuarios/:id', AlterarUsuario);
-  THorse.Delete('/usuarios/:id', DeletarUsuario);
+  THorse
+    .Group
+        .Prefix(C_PREFIX)
+        .Get('/usuarios', ListarUsuarios)
+        .Get('/usuarios/:id', ObterUsuario)
+        .Post('/usuarios', CadastarUsuarios)
+        .Put('/usuarios/:id', AlterarUsuario)
+        .Delete('/usuarios/:id', DeletarUsuario);
 end;
 
 end.

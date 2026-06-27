@@ -4,6 +4,10 @@ interface
 
 uses System.JSON;
 
+const
+  VERSAO_API = '0.0.10';
+  C_PREFIX = 'v1';
+
 function ErroJson(const AMensagem: string): TJSONObject; overload;
 function ErroJson(const AMensagem: string; const ADetalhes: TArray<string>): TJSONObject; overload;
 
