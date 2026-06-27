@@ -1,0 +1,217 @@
+﻿unit Services.Produto;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Providers.Cadastro, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.ConsoleUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Phys.IBBase, System.Generics.Collections;
+
+type
+  TServiceProduto = class(TProvidersCadastro)
+    qryCadastroCOD_PRODUTO: TIntegerField;
+    qryCadastroCOD_EMBALAGEM_COLETIVA: TIntegerField;
+    qryCadastroCOD_GRUPO: TIntegerField;
+    qryCadastroCOD_GRADE: TIntegerField;
+    qryCadastroCOD_MEDIDA: TIntegerField;
+    qryCadastroCOD_GRUPO_NCM: TIntegerField;
+    qryCadastroCOD_MARCA: TIntegerField;
+    qryCadastroCOD_COR: TIntegerField;
+    qryCadastroCOD_REFERENCIA: TStringField;
+    qryCadastroEXIBIR_VENDA: TSmallintField;
+    qryCadastroNOME: TStringField;
+    qryCadastroEXIBIR_FORCA_VENDA: TSmallintField;
+    qryCadastroNOME_PDV: TStringField;
+    qryCadastroEXIBIR_PONTO_VENDA: TSmallintField;
+    qryCadastroCOD_UNIDADE_ENTRADA: TStringField;
+    qryCadastroCOD_UNIDADE_SAIDA: TStringField;
+    qryCadastroNOME_NF: TStringField;
+    qryCadastroCONVERSAO: TFloatField;
+    qryCadastroTIPO_CONVERSAO: TStringField;
+    qryCadastroPRODUTO_BALANCA: TStringField;
+    qryCadastroSITUACAO: TSmallintField;
+    qryCadastroTIPO_PRODUTO: TSmallintField;
+    qryCadastroETIQUETA_ESPECIAL: TStringField;
+    qryCadastroDT_CADASTRO: TSQLTimeStampField;
+    qryCadastroDESCONTO_PERMITIDO: TFloatField;
+    qryCadastroDESCONTO_MAXIMO: TFloatField;
+    qryCadastroUSA_ETIQUETA: TStringField;
+    qryCadastroDT_SITUACAO: TSQLTimeStampField;
+    qryCadastroUSA_DIMENSAO: TStringField;
+    qryCadastroCOD_PLANO_CREDITO: TIntegerField;
+    qryCadastroCOD_PLANO_DEBITO: TIntegerField;
+    qryCadastroUSA_LOTE: TStringField;
+    qryCadastroCOD_ACESSO: TStringField;
+    qryCadastroVASILHAME_RETORNAVEL: TSmallintField;
+    qryCadastroCOD_BARRAS: TStringField;
+    qryCadastroCOD_UNIDADE_NF: TStringField;
+    qryCadastroIMPRIMIR_TABELA_PRECO: TSmallintField;
+    qryCadastroUSA_NUMERO_SERIAL: TIntegerField;
+    qryCadastroCOMISSAO: TFloatField;
+    qryCadastroMINIMO_FATURAMENTO: TFloatField;
+    qryCadastroUSA_GRADE: TSmallintField;
+    qryCadastroLIBERA_NOME: TSmallintField;
+    qryCadastroUSA_CARGA: TSmallintField;
+    qryCadastroCOD_UNIDADE_CARGA: TStringField;
+    qryCadastroTIPO_CONVERSAO_CARGA: TStringField;
+    qryCadastroCONVERSAO_CARGA: TFloatField;
+    qryCadastroNAO_USA_ESTOQUE: TSmallintField;
+    qryCadastroCOMISSAO_ABAIXO: TFloatField;
+    qryCadastroOBSERVACAO: TMemoField;
+    qryCadastroUSA_CONTRATO: TSmallintField;
+    qryCadastroATUALIZAR: TSmallintField;
+    qryCadastroUSA_MEDIDA: TSmallintField;
+    qryCadastroCOD_GRUPO_CEST: TIntegerField;
+    qryCadastroCOD_EMPRESA_EAN: TIntegerField;
+    qryCadastroCOD_BARRA_ITEM: TIntegerField;
+    qryCadastroCOD_TIPO_VASILHAME: TIntegerField;
+    qryCadastroCOD_GRUPO_ANP: TIntegerField;
+    qryCadastroACRESCIMO_PERMITIDO: TFloatField;
+    qryCadastroARMAMENTO: TSmallintField;
+    qryCadastroCOD_PRODUTO_FORMULA: TIntegerField;
+    qryCadastroCAPACIDADE_EMBALAGEM_COLETIVA: TFloatField;
+    qryPesquisaCOD_PRODUTO: TIntegerField;
+    qryPesquisaCOD_GRUPO: TIntegerField;
+    qryPesquisaCOD_MARCA: TIntegerField;
+    qryPesquisaCOD_COR: TIntegerField;
+    qryPesquisaNOME: TStringField;
+    qryPesquisaCOD_UNIDADE_ENTRADA: TStringField;
+    qryPesquisaCOD_UNIDADE_SAIDA: TStringField;
+    qryPesquisaCONVERSAO: TFloatField;
+    qryPesquisaTIPO_CONVERSAO: TStringField;
+    qryPesquisaPRODUTO_BALANCA: TStringField;
+    qryPesquisaSITUACAO: TSmallintField;
+    qryPesquisaTIPO_PRODUTO: TSmallintField;
+    qryPesquisaDT_SITUACAO: TSQLTimeStampField;
+    qryPesquisaCOD_EXIBICAO: TStringField;
+    qryPesquisaGRUPO: TStringField;
+    qryPesquisaCOR: TStringField;
+    qryPesquisaMARCA: TStringField;
+    qryPesquisaUNIDADE_ENTRADA: TStringField;
+    qryPesquisaUNIDADE_SAIDA: TStringField;
+    qryPesquisaCOD_GRUPO_PAI: TIntegerField;
+    qryPesquisaGRUPO_PAI: TStringField;
+    qryPesquisaCOD_EXIBICAO_PAI: TStringField;
+    qryPesquisaNCM: TStringField;
+    qryPesquisaCOD_GRUPO_NCM: TIntegerField;
+    qryPesquisaGRUPO_NCM: TStringField;
+    qryPesquisaCOD_UNIDADE_NF: TStringField;
+    qryPesquisaUNIDADE_NF: TStringField;
+    qryPesquisaIMPRIMIR_TABELA_PRECO: TSmallintField;
+    qryPesquisaCOMISSAO: TFloatField;
+    qryPesquisaMINIMO_FATURAMENTO: TFloatField;
+    qryPesquisaUSA_GRADE: TSmallintField;
+    qryPesquisaCOD_GRADE: TIntegerField;
+    qryPesquisaUSA_CARGA: TSmallintField;
+    qryPesquisaCOD_UNIDADE_CARGA: TStringField;
+    qryPesquisaTIPO_CONVERSAO_CARGA: TStringField;
+    qryPesquisaCONVERSAO_CARGA: TFloatField;
+    qryPesquisaUNIDADE_CARGA: TStringField;
+    qryPesquisaCOMISSAO_ABAIXO: TFloatField;
+    qryPesquisaOBSERVACAO: TMemoField;
+    qryPesquisaATUALIZAR: TSmallintField;
+    qryPesquisaCOD_GRUPO_CEST: TIntegerField;
+    qryPesquisaCEST: TStringField;
+    qryPesquisaGRUPO_CEST: TStringField;
+    qryPesquisaCOD_BARRAS: TStringField;
+    qryPesquisaEXIBIR_VENDA: TSmallintField;
+    qryPesquisaEXIBIR_PONTO_VENDA: TSmallintField;
+    qryPesquisaEXIBIR_FORCA_VENDA: TSmallintField;
+  protected
+    function GetCamposObrigatorios: TArray<TCampoValidacao>; override;
+    function GetCamposServidor: TArray<string>; override;
+  private
+    function GetCampoChave: String; override;
+  public
+     function ListAll(const AParams: TDictionary<string, string>): TFDQuery; override;
+
+  end;
+
+var
+  ServiceProduto: TServiceProduto;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+
+{ TServiceProduto }
+
+function TServiceProduto.GetCampoChave: String;
+begin
+   Result := 'COD_PRODUTO';
+end;
+
+function TServiceProduto.GetCamposObrigatorios: TArray<TCampoValidacao>;
+begin
+  Result := [
+    TCampoValidacao.New('NOME',      tcTexto),
+    TCampoValidacao.New('COD_GRUPO', tcInteiro),
+    TCampoValidacao.New('COD_MARCA', tcInteiro)
+  ];
+end;
+
+function TServiceProduto.GetCamposServidor: TArray<string>;
+begin
+  Result := [];
+end;
+
+
+function TServiceProduto.ListAll(
+  const AParams: TDictionary<string, string>): TFDQuery;
+begin
+  if AParams.ContainsKey('NOME') then
+     begin
+       qryPesquisa.sql.Add('AND UPPER(P.NOME) like :NOME');
+       qryPesquisa.ParamByName('NOME').AsString := '%'+ AParams.Items['NOME'].ToUpper +'%';
+
+       qryRecordCount.SQL.Add('AND UPPER(P.NOME) like :NOME');
+       qryRecordCount.ParamByName('NOME').AsString := '%'+ AParams.Items['NOME'].ToUpper +'%';
+     end;
+
+  if AParams.ContainsKey('COD_BARRAS') then
+    begin
+      qryPesquisa.sql.Add('AND P.COD_BARRAS = :COD_BARRAS');
+      qryPesquisa.ParamByName('COD_BARRAS').AsString := AParams.Items['COD_BARRAS'];
+
+      qryRecordCount.SQL.Add('AND P.COD_BARRAS = :COD_BARRAS');
+      qryRecordCount.ParamByName('COD_BARRAS').AsString := AParams.Items['COD_BARRAS'];
+    end;
+
+  if AParams.ContainsKey('COD_PRODUTO') then
+    begin
+      qryPesquisa.sql.Add('AND  P.COD_PRODUTO = :COD_PRODUTO');
+      qryPesquisa.ParamByName('COD_PRODUTO').AsString := AParams.Items['COD_PRODUTO'];
+
+      qryRecordCount.SQL.Add('AND P.COD_PRODUTO = :COD_PRODUTO');
+      qryRecordCount.ParamByName('COD_PRODUTO').AsString := AParams.Items['COD_PRODUTO'];
+    end;
+
+  if AParams.ContainsKey('tipo_produto') then
+    begin
+      qryPesquisa.sql.Add('AND P.TIPO_PRODUTO = :TIPO_PRODUTO');
+      qryPesquisa.ParamByName('TIPO_PRODUTO').AsString := AParams.Items['TIPO_PRODUTO'];
+
+      qryRecordCount.SQL.Add('AND P.TIPO_PRODUTO = :TIPO_PRODUTO');
+      qryRecordCount.ParamByName('TIPO_PRODUTO').AsString := AParams.Items['TIPO_PRODUTO'];
+    end;
+
+
+  if AParams.ContainsKey('SITUACAO') then
+    begin
+      qryPesquisa.sql.Add('AND P.SITUACAO = :SITUACAO');
+      qryPesquisa.ParamByName('SITUACAO').AsString := AParams.Items['SITUACAO'];
+
+      qryRecordCount.SQL.Add('AND P.SITUACAO = :situacao');
+      qryRecordCount.ParamByName('SITUACAO').AsString := AParams.Items['SITUACAO'];
+    end;
+  qryPesquisa.SQL.Add('ORDER BY P.COD_PRODUTO');
+  Result := inherited ListAll(AParams);
+end;
+
+end.

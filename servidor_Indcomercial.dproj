@@ -185,6 +185,18 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="src\controllers\Controllers.Produto.pas"/>
+        <DCCReference Include="src\controllers\Controllers.Usuario.pas"/>
+        <DCCReference Include="src\services\Services.Almoxarifado.pas">
+            <Form>ServiceAlmoxarifado</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\controllers\Controllers.Almoxarifado.pas"/>
+        <DCCReference Include="src\services\Services.Usuario.pas">
+            <Form>ServicesUsuario</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

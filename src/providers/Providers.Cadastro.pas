@@ -49,7 +49,8 @@ var
 
 implementation
 
-uses DataSet.Serialize;
+uses
+  DataSet.Serialize;
 
 {%CLASSGROUP 'System.Classes.TPersistent'}
 
@@ -64,6 +65,16 @@ begin
 end;
 
 { TProvidersCadastro }
+
+function GetValueCaseInsensitive(const AJson: TJSONObject; const AKey: string): TJSONValue;
+var
+  LPair: TJSONPair;
+begin
+  for LPair in AJson do
+    if SameText(LPair.JsonString.Value, AKey) then
+      Exit(LPair.JsonValue);
+  Result := nil;
+end;
 
 constructor TProvidersCadastro.Create;
 begin
@@ -91,6 +102,8 @@ begin
     for LCampo in GetCamposObrigatorios do
     begin
       LValue := AJson.GetValue(LCampo.Nome);
+      if LValue = nil then
+        LValue := GetValueCaseInsensitive(AJson, LCampo.Nome);
 
       if (LValue = nil) or LValue.Null then
       begin
@@ -132,7 +145,9 @@ begin
 end;
 
 function TProvidersCadastro.Append(const AJson: TJSONObject): Boolean;
+var texto: string;
 begin
+  texto := Ajson.ToString;
   RemoverCamposServidor(AJson);
   qryCadastro.Close;
   qryCadastro.SQL.Text := FSqlCadastroOriginal + ' where 1<>1';

@@ -1,0 +1,87 @@
+0:0:0:0:0:0:0:1 [25/junho/2026 08:18:38.771] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 08:18:46.549] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 08:18:47.373] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 13:30:20.046] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "OPTIONS /auth/login HTTP/1.1" 204 0
+0:0:0:0:0:0:0:1 [25/junho/2026 13:30:22.287] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:30:22.288] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:58:38.094] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "OPTIONS /auth/login HTTP/1.1" 204 0
+0:0:0:0:0:0:0:1 [25/junho/2026 13:58:41.430] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:58:41.430] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:58:53.255] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "OPTIONS /auth/login HTTP/1.1" 204 0
+0:0:0:0:0:0:0:1 [25/junho/2026 13:58:56.065] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:58:56.065] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:59:03.281] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "OPTIONS /auth/login HTTP/1.1" 204 0
+0:0:0:0:0:0:0:1 [25/junho/2026 13:59:07.026] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:59:07.026] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:59:49.078] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "OPTIONS /auth/login HTTP/1.1" 204 0
+0:0:0:0:0:0:0:1 [25/junho/2026 13:59:51.502] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 13:59:51.502] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "POST /auth/login HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [25/junho/2026 14:16:36.786] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "OPTIONS /produtos HTTP/1.1" 204 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:19:35.871] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:19:45.941] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:19:56.733] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:20:02.450] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:20:14.564] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:20:15.581] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:20:16.373] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:20:17.354] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:20:18.194] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:20:44.346] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:21:04.263] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:21:27.044] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:22:46.053] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:22:49.383] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:22:52.200] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:22:54.053] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:22:56.614] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:22:57.856] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:23:03.304] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:23:13.148] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 14:23:21.675] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 23
+0:0:0:0:0:0:0:1 [25/junho/2026 14:23:24.443] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 20:03:10.253] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 20:10:12.986] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [25/junho/2026 20:10:27.793] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [25/junho/2026 20:10:48.676] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 20:11:11.073] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [25/junho/2026 20:11:38.238] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 20:11:55.161] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 680
+0:0:0:0:0:0:0:1 [25/junho/2026 20:12:21.926] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [25/junho/2026 20:13:04.351] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 680
+0:0:0:0:0:0:0:1 [25/junho/2026 20:13:43.232] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 20:14:00.024] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 21:04:27.336] PostmanRuntime/7.53.0 "GET /usuarios/1 HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [25/junho/2026 21:04:44.343] PostmanRuntime/7.53.0 "GET /usuarios/1 HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [25/junho/2026 21:09:51.328] PostmanRuntime/7.53.0 "GET /produtos/5000 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [25/junho/2026 21:09:57.065] PostmanRuntime/7.53.0 "GET /produtos/1 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 21:12:55.266] PostmanRuntime/7.53.0 "GET /produtos/1 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 21:13:19.946] PostmanRuntime/7.53.0 "GET /produtos/2 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 21:15:24.132] PostmanRuntime/7.53.0 "GET /produtos/2233 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 21:15:47.967] PostmanRuntime/7.53.0 "GET /usuarios/1 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [25/junho/2026 21:15:59.476] PostmanRuntime/7.53.0 "GET /usuarios/16656 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [25/junho/2026 21:16:06.298] PostmanRuntime/7.53.0 "GET /usuarios/ HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 21:25:57.353] PostmanRuntime/7.53.0 "GET /usuarios/1 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [25/junho/2026 21:26:07.048] PostmanRuntime/7.53.0 "GET /usuarios/12 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [25/junho/2026 21:26:13.686] PostmanRuntime/7.53.0 "GET /usuarios/2 HTTP/1.1" 200 332
+0:0:0:0:0:0:0:1 [25/junho/2026 21:26:47.394] PostmanRuntime/7.53.0 "GET /usuarios/2 HTTP/1.1" 200 332
+0:0:0:0:0:0:0:1 [25/junho/2026 21:28:54.733] PostmanRuntime/7.53.0 "GET /usuarios/2 HTTP/1.1" 200 332
+0:0:0:0:0:0:0:1 [25/junho/2026 21:29:03.722] PostmanRuntime/7.53.0 "GET /usuarios/1 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [25/junho/2026 21:29:08.889] PostmanRuntime/7.53.0 "GET /usuarios/12 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [25/junho/2026 21:29:15.862] PostmanRuntime/7.53.0 "GET /usuarios/13 HTTP/1.1" 200 342
+0:0:0:0:0:0:0:1 [25/junho/2026 21:29:20.863] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 21:29:37.417] PostmanRuntime/7.53.0 "GET /usuarios/0 HTTP/1.1" 400 23
+0:0:0:0:0:0:0:1 [25/junho/2026 21:29:57.950] PostmanRuntime/7.53.0 "GET /usuarios/5 HTTP/1.1" 200 335
+0:0:0:0:0:0:0:1 [25/junho/2026 22:10:51.262] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 89
+0:0:0:0:0:0:0:1 [25/junho/2026 22:11:29.578] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 61
+0:0:0:0:0:0:0:1 [25/junho/2026 22:12:00.218] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 89
+0:0:0:0:0:0:0:1 [25/junho/2026 22:12:30.029] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 89
+0:0:0:0:0:0:0:1 [25/junho/2026 22:13:11.619] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 89
+0:0:0:0:0:0:0:1 [25/junho/2026 22:14:37.601] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 89
+0:0:0:0:0:0:0:1 [25/junho/2026 22:17:21.477] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 201 343
+0:0:0:0:0:0:0:1 [25/junho/2026 22:19:04.072] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 201 343
+0:0:0:0:0:0:0:1 [25/junho/2026 22:20:07.319] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 201 343
+0:0:0:0:0:0:0:1 [25/junho/2026 22:21:12.612] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 201 343
+0:0:0:0:0:0:0:1 [25/junho/2026 22:22:14.380] PostmanRuntime/7.53.0 "GET /usuarios HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [25/junho/2026 22:23:29.876] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 89
+0:0:0:0:0:0:0:1 [25/junho/2026 22:23:56.490] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 89
+0:0:0:0:0:0:0:1 [25/junho/2026 22:24:47.609] PostmanRuntime/7.53.0 "POST /usuarios HTTP/1.1" 400 89

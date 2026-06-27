@@ -1,0 +1,202 @@
+﻿unit Providers.Cadastro;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Providers.Connection, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.ConsoleUI.Wait,
+  FireDAC.Phys.IBBase, Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,
+  System.JSON, System.Generics.Collections, FireDAC.VCLUI.Wait;
+
+type
+  TTipoCampo = (tcQualquer, tcTexto, tcInteiro, tcNumero);
+
+  TCampoValidacao = record
+    Nome: string;
+    Tipo: TTipoCampo;
+    class function New(const ANome: string; ATipo: TTipoCampo): TCampoValidacao; static;
+  end;
+
+  TProvidersCadastro = class(TProvidersConnection)
+    qryPesquisa: TFDQuery;
+    qryRecordCount: TFDQuery;
+    qryCadastro: TFDQuery;
+    qryRecordCountCOUNT: TIntegerField;
+  protected
+    FCampoChave: String;
+    function GetCamposObrigatorios: TArray<TCampoValidacao>; virtual; abstract;
+    function GetCamposServidor: TArray<string>; virtual; abstract;
+  private
+    FSqlCadastroOriginal: string;
+    procedure RemoverCamposServidor(const AJson: TJSONObject);
+  public
+    constructor Create; reintroduce;
+    function Validar(const AJson: TJSONObject; out AErros: TArray<string>): Boolean; virtual;
+    function Append(const AJson: TJSONObject): Boolean; virtual;
+    function Update(const AJson: TJSONObject): Boolean; virtual;
+    function Delete: Boolean; virtual;
+    function ListAll(const AParams: TDictionary<string, string>): TFDQuery; virtual;
+    function GetById(const Aid: Int64): TFDQuery;
+    function GetRecordCount: Int64; virtual;
+    function GetCampoChave: String; virtual; abstract;
+  end;
+
+var
+  ProvidersCadastro: TProvidersCadastro;
+
+implementation
+
+uses
+  DataSet.Serialize;
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+{ TCampoValidacao }
+
+class function TCampoValidacao.New(const ANome: string; ATipo: TTipoCampo): TCampoValidacao;
+begin
+  Result.Nome := ANome;
+  Result.Tipo := ATipo;
+end;
+
+{ TProvidersCadastro }
+
+function GetValueCaseInsensitive(const AJson: TJSONObject; const AKey: string): TJSONValue;
+var
+  LPair: TJSONPair;
+begin
+  for LPair in AJson do
+    if SameText(LPair.JsonString.Value, AKey) then
+      Exit(LPair.JsonValue);
+  Result := nil;
+end;
+
+constructor TProvidersCadastro.Create;
+begin
+  inherited Create(nil);
+  FSqlCadastroOriginal := qryCadastro.SQL.Text;
+end;
+
+function TProvidersCadastro.Validar(const AJson: TJSONObject; out AErros: TArray<string>): Boolean;
+var
+  LCampo: TCampoValidacao;
+  LValue: TJSONValue;
+  LErros: TList<string>;
+  LInt: Integer;
+  LNum: Double;
+begin
+  LErros := TList<string>.Create;
+  try
+    if not Assigned(AJson) then
+    begin
+      LErros.Add('Body é obrigatório');
+      AErros := LErros.ToArray;
+      Exit(False);
+    end;
+
+    for LCampo in GetCamposObrigatorios do
+    begin
+      LValue := AJson.GetValue(LCampo.Nome);
+      if LValue = nil then
+        LValue := GetValueCaseInsensitive(AJson, LCampo.Nome);
+
+      if (LValue = nil) or LValue.Null then
+      begin
+        LErros.Add(Format('%s é obrigatório', [LCampo.Nome]));
+        Continue;
+      end;
+
+      case LCampo.Tipo of
+        tcTexto:
+          if not (LValue is TJSONString) then
+            LErros.Add(Format('%s deve ser texto', [LCampo.Nome]))
+          else if TJSONString(LValue).Value.Trim.IsEmpty then
+            LErros.Add(Format('%s não pode estar em branco', [LCampo.Nome]));
+
+        tcInteiro:
+          if not TryStrToInt(LValue.Value, LInt) then
+            LErros.Add(Format('%s deve ser um número inteiro', [LCampo.Nome]));
+
+        tcNumero:
+          if not TryStrToFloat(LValue.Value, LNum) then
+            LErros.Add(Format('%s deve ser numérico', [LCampo.Nome]));
+      end;
+    end;
+    AErros := LErros.ToArray;
+    Result := LErros.Count = 0;
+  finally
+    LErros.Free;
+  end;
+end;
+
+procedure TProvidersCadastro.RemoverCamposServidor(const AJson: TJSONObject);
+var
+  LCampo: string;
+begin
+  if not Assigned(AJson) then
+    Exit;
+  for LCampo in GetCamposServidor do
+    AJson.RemovePair(LCampo).Free;
+end;
+
+function TProvidersCadastro.Append(const AJson: TJSONObject): Boolean;
+begin
+  RemoverCamposServidor(AJson);
+  qryCadastro.Close;
+  qryCadastro.SQL.Text := FSqlCadastroOriginal + ' where 1<>1';
+  qryCadastro.Open;
+  qryCadastro.LoadFromJSON(AJson, False);
+  qryCadastro.ApplyUpdates(-1);
+  Result := True;
+end;
+
+function TProvidersCadastro.Delete: Boolean;
+begin
+  qryCadastro.Delete;
+  qryCadastro.ApplyUpdates(0);
+  Result := True;
+end;
+
+function TProvidersCadastro.GetById(const Aid: Int64): TFDQuery;
+begin
+  qryCadastro.Close;
+  qryCadastro.SQL.Text := FSqlCadastroOriginal + ' WHERE ' + GetCampoChave + ' = :ID';
+  qryCadastro.ParamByName('ID').AsLargeInt := Aid;
+  qryCadastro.Open;
+  Result := qryCadastro;
+end;
+
+function TProvidersCadastro.GetRecordCount: Int64;
+begin
+  qryRecordCount.Open();
+  Result := qryRecordCountCOUNT.AsLargeInt;
+end;
+
+function TProvidersCadastro.ListAll(const AParams: TDictionary<string, string>): TFDQuery;
+begin
+  if AParams.ContainsKey('limit') then
+    begin
+      qryPesquisa.FetchOptions.RecsMax := StrToIntDef(AParams.Items['limit'], 50);
+      qryPesquisa.FetchOptions.RowsetSize := StrToIntDef(AParams.Items['limit'], 50);
+    end;
+  if AParams.ContainsKey('offset') then
+    qryPesquisa.FetchOptions.RecsSkip := StrToIntDef(AParams.Items['offset'], 0);
+
+  qryPesquisa.Open();
+  Result := qryPesquisa;
+end;
+
+function TProvidersCadastro.Update(const AJson: TJSONObject): Boolean;
+begin
+  RemoverCamposServidor(AJson);
+  qryCadastro.MergeFromJSONObject(AJson, False);
+  qryCadastro.ApplyUpdates(0);
+  Result := True;
+end;
+
+end.

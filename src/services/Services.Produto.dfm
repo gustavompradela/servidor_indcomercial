@@ -1,6 +1,9 @@
 inherited ServiceProduto: TServiceProduto
   Height = 315
   Width = 703
+  inherited FDConnection: TFDConnection
+    Connected = True
+  end
   inherited qryPesquisa: TFDQuery
     SQL.Strings = (
       
@@ -51,9 +54,8 @@ inherited ServiceProduto: TServiceProduto
       'WHERE 1 = 1')
     object qryPesquisaCOD_PRODUTO: TIntegerField
       FieldName = 'COD_PRODUTO'
-      Origin = 'COD_PRODUTO'
+      Origin = 'P.COD_PRODUTO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object qryPesquisaCOD_GRUPO: TIntegerField
       FieldName = 'COD_GRUPO'
@@ -69,7 +71,7 @@ inherited ServiceProduto: TServiceProduto
     end
     object qryPesquisaNOME: TStringField
       FieldName = 'NOME'
-      Origin = 'NOME'
+      Origin = 'P.NOME'
       Size = 60
     end
     object qryPesquisaCOD_UNIDADE_ENTRADA: TStringField
@@ -321,7 +323,7 @@ inherited ServiceProduto: TServiceProduto
   end
   inherited qryRecordCount: TFDQuery
     SQL.Strings = (
-      'SELECT COUNT(COD_PRODUTO) FROM PRODUTO'
+      'SELECT COUNT(P.COD_PRODUTO) FROM PRODUTO P'
       'WHERE 1 = 1')
     Left = 441
   end

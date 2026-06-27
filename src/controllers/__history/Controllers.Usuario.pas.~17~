@@ -1,0 +1,65 @@
+unit Controllers.Usuario;
+
+interface
+
+procedure RegistrarRota;
+
+implementation
+
+Uses Horse, Service.Usuario, System.JSON, DataSet.Serialize,  System.SysUtils, Providers.Helpers;
+
+procedure ListarUsuarios(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  LRetorno: TJSONObject;
+  LService: TServiceUsuario;
+begin
+  LService  :=  TServiceUsuario.Create;
+  try
+     LRetorno := TJSONObject.Create;
+     LRetorno.AddPair('data', LService.ListAll(Req.Query.Dictionary).ToJSONArray());
+     LRetorno.AddPair('records', TJSONNumber.Create(LService.GetRecordCount));
+     Res.Send(LRetorno);
+
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure ObterUsuario(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  LService: TServiceUsuario;
+  LId: Int64;
+begin
+  LService := TServiceUsuario.Create();
+  try
+    LId := StrToInt64Def(Req.Params.Items['id'], 0);
+
+    if LId <= 0 then
+    begin
+      Res.Send(ErroJson('ID inválido')).Status(400);
+      Exit;
+    end;
+
+    LService.GetById(LId);
+
+    if LService.qryCadastro.IsEmpty then
+    begin
+      Res.Send(ErroJson('Usuário não encontrado')).Status(404);
+      Exit;
+    end;
+
+    Res.Send(LService.qryCadastro.ToJSONObject());
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure RegistrarRota;
+begin
+  THorse.Get('/usuarios', ListarUsuarios);
+  THorse.Get('/usuarios/:id', ObterUsuario);
+
+
+end;
+
+end.

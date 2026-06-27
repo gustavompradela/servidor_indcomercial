@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.ConsoleUI.Wait,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Phys.IBBase;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Phys.IBBase, System.Generics.Collections;
 
 type
   TServiceProduto = class(TProvidersCadastro)
@@ -126,6 +126,7 @@ type
   private
     function GetCampoChave: String; override;
   public
+     function ListAll(const AParams: TDictionary<string, string>): TFDQuery; override;
 
   end;
 
@@ -160,5 +161,56 @@ begin
   Result := [];
 end;
 
+
+function TServiceProduto.ListAll(
+  const AParams: TDictionary<string, string>): TFDQuery;
+begin
+  if AParams.ContainsKey('NOME') then
+     begin
+       qryPesquisa.sql.Add('AND UPPER(P.NOME) like :NOME');
+       qryPesquisa.ParamByName('NOME').AsString := '%'+ AParams.Items['NOME'].ToUpper +'%';
+       qryRecordCount.SQL.Add('AND UPPER(P.NOME) like :NOME');
+       qryRecordCount.ParamByName('NOME').AsString := '%'+ AParams.Items['NOME'].ToUpper +'%';
+     end;
+
+  if AParams.ContainsKey('COD_BARRAS') then
+    begin
+      qryPesquisa.sql.Add('AND P.COD_BARRAS = :COD_BARRAS');
+      qryPesquisa.ParamByName('COD_BARRAS').AsString := AParams.Items['COD_BARRAS'];
+
+      qryRecordCount.SQL.Add('AND P.COD_BARRAS = :COD_BARRAS');
+      qryRecordCount.ParamByName('COD_BARRAS').AsString := AParams.Items['COD_BARRAS'];
+    end;
+
+  if AParams.ContainsKey('COD_PRODUTO') then
+    begin
+      qryPesquisa.sql.Add('AND  P.COD_PRODUTO = :COD_PRODUTO');
+      qryPesquisa.ParamByName('COD_PRODUTO').AsString := AParams.Items['COD_PRODUTO'];
+
+      qryRecordCount.SQL.Add('AND P.COD_PRODUTO = :COD_PRODUTO');
+      qryRecordCount.ParamByName('COD_PRODUTO').AsString := AParams.Items['COD_PRODUTO'];
+    end;
+
+  if AParams.ContainsKey('TIPO_PRODUTO') then
+    begin
+      qryPesquisa.sql.Add('AND P.TIPO_PRODUTO = :TIPO_PRODUTO');
+      qryPesquisa.ParamByName('TIPO_PRODUTO').AsString := AParams.Items['TIPO_PRODUTO'];
+
+      qryRecordCount.SQL.Add('AND P.TIPO_PRODUTO = :TIPO_PRODUTO');
+      qryRecordCount.ParamByName('TIPO_PRODUTO').AsString := AParams.Items['TIPO_PRODUTO'];
+    end;
+
+
+  if AParams.ContainsKey('SITUACAO') then
+    begin
+      qryPesquisa.sql.Add('AND P.SITUACAO = :SITUACAO');
+      qryPesquisa.ParamByName('SITUACAO').AsString := AParams.Items['SITUACAO'];
+
+      qryRecordCount.SQL.Add('AND P.SITUACAO = :situacao');
+      qryRecordCount.ParamByName('SITUACAO').AsString := AParams.Items['SITUACAO'];
+    end;
+  qryPesquisa.SQL.Add('ORDER BY P.COD_PRODUTO');
+  Result := inherited ListAll(AParams);
+end;
 
 end.

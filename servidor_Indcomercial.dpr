@@ -18,11 +18,16 @@ uses
   Providers.Cadastro in 'src\providers\Providers.Cadastro.pas' {ProvidersCadastro: TDataModule},
   Providers.Helpers in 'src\providers\Providers.Helpers.pas',
   Services.Produto in 'src\services\Services.Produto.pas' {ServiceProduto: TDataModule},
-  Controllers.Produto in 'src\controllers\Controllers.Produto.pas';
+  Controllers.Produto in 'src\controllers\Controllers.Produto.pas',
+  Controllers.Usuario in 'src\controllers\Controllers.Usuario.pas',
+  Services.Almoxarifado in 'src\services\Services.Almoxarifado.pas' {ServiceAlmoxarifado: TDataModule},
+  Controllers.Almoxarifado in 'src\controllers\Controllers.Almoxarifado.pas',
+  Services.Usuario in 'src\services\Services.Usuario.pas' {ServicesUsuario: TDataModule};
 
 begin
   TDataSetSerializeConfig.GetInstance.CaseNameDefinition := TCaseNameDefinition.cndLower;
   TDataSetSerializeConfig.GetInstance.Import.DecimalSeparator := '.';
+  TDataSetSerializeConfig.GetInstance.Import.ImportOnlyFieldsVisible := False;
   THorseLoggerManager.RegisterProvider(THorseLoggerProviderConsole.New());
   THorseLoggerManager.RegisterProvider(THorseLoggerProviderLogFile.New());
   THorse.Use(THorseLoggerManager.HorseCallback);
@@ -34,15 +39,23 @@ begin
     .Use(Jhonson);
 
 
-  THorse.Get('/ping',
-    procedure (Req: THorseRequest; Res: THorseResponse; Next: TProc)
+  THorse
+    .Get('/healthcheck',
+      procedure (Req: THorseRequest; Res: THorseResponse; Next: TProc)
       begin
-        Res.Send('pong');
+        Res.Send('API funcionando');
+      end
+  )
+  .Get('/version', procedure (Req: THorseRequest; Res: THorseResponse; Next: TProc)
+      begin
+        Res.Send('API funcionando');
       end
   );
 
 
   Controllers.Produto.RegistrarRota;
+  Controllers.Usuario.RegistrarRota;
+  Controllers.Almoxarifado.RegistrarRota;
   THorse.Listen(9000);
 
 end.

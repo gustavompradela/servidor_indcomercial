@@ -1,0 +1,190 @@
+﻿unit Controllers.Usuario;
+
+interface
+
+procedure RegistrarRota;
+
+implementation
+
+Uses Horse, Service.Usuario, System.JSON, DataSet.Serialize,  System.SysUtils, Providers.Helpers,  FireDAC.Stan.Error;
+
+procedure ListarUsuarios(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  LRetorno: TJSONObject;
+  LService: TServiceUsuario;
+begin
+  LService  :=  TServiceUsuario.Create;
+  try
+     LRetorno := TJSONObject.Create;
+     LRetorno.AddPair('data', LService.ListAll(Req.Query.Dictionary).ToJSONArray());
+     LRetorno.AddPair('records', TJSONNumber.Create(LService.GetRecordCount));
+     Res.Send(LRetorno);
+
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure ObterUsuario(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  LService: TServiceUsuario;
+  LId: Int64;
+begin
+  LService := TServiceUsuario.Create();
+  try
+    LId := StrToInt64Def(Req.Params.Items['id'], 0);
+
+    if LId <= 0 then
+    begin
+      Res.Send(ErroJson('ID inv�lido')).Status(400);
+      Exit;
+    end;
+
+    LService.GetById(LId);
+
+    if LService.qryCadastro.IsEmpty then
+    begin
+      Res.Send(ErroJson('Usu�rio n�o encontrado')).Status(404);
+      Exit;
+    end;
+
+    Res.Send(LService.qryCadastro.ToJSONObject());
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure CadastarUsuarios(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  LService: TServiceUsuario;
+  LUsuario: TJSONObject;
+  LErros: TArray<string>;
+begin
+  try
+    LUsuario := Req.Body<TJSONObject>;
+  except
+    on E: Exception do
+    begin
+      Res.Send(ErroJson('JSON inv�lido: ' + E.Message)).Status(400);
+      Exit;
+    end;
+  end;
+
+  LService := TServiceUsuario.Create();
+  try
+    if not LService.Validar(LUsuario, LErros) then
+    begin
+      Res.Send(ErroJson('Campos inv�lidos', LErros)).Status(400);
+      Exit;
+    end;
+
+    try
+      if LService.Append(LUsuario) then
+        Res.Send(LService.qryCadastro.ToJSONObject()).Status(THTTPStatus.Created)
+      else
+        Res.Send(ErroJson('N�o foi poss�vel incluir o produto')).Status(500);
+    except
+      on E: EFDDBEngineException do
+        Res.Send(ErroJson('Erro de banco: ' + E.Message)).Status(422);
+      on E: Exception do
+        Res.Send(ErroJson(E.Message)).Status(500);
+    end;
+  finally
+     LService.Free;
+  end;
+
+end;
+
+procedure AlterarUsuario(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  LService: TServiceUsuario;
+  LUsuario: TJSONObject;
+  LId: Int64;
+  LErros: TArray<string>;
+begin
+  try
+    LUsuario := Req.Body<TJSONObject>;
+  except
+    on E: Exception do
+    begin
+      Res.Send(ErroJson('JSON inválido: ' + E.Message)).Status(400);
+      Exit;
+    end;
+  end;
+
+  LService := TServiceUsuario.Create();
+  try
+    LId := StrToInt64Def(Req.Params.Items['id'], 0);
+
+    if LId <= 0 then
+    begin
+      Res.Send(ErroJson('ID inválido')).Status(400);
+      Exit;
+    end;
+
+    LService.GetById(LId);
+
+    if LService.qryCadastro.IsEmpty then
+    begin
+      Res.Send(ErroJson('Usuário não encontrado')).Status(404);
+      Exit;
+    end;
+
+    try
+      if LService.Update(LUsuario) then
+        Res.Send(LService.qryCadastro.ToJSONObject()).Status(THTTPStatus.OK)
+      else
+        Res.Send(ErroJson('Não foi possível alterar o usuário')).Status(500);
+    except
+      on E: EFDDBEngineException do
+        Res.Send(ErroJson('Erro de banco: ' + E.Message)).Status(422);
+      on E: Exception do
+        Res.Send(ErroJson(E.Message)).Status(500);
+    end;
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure DeletarUsuario(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  LService: TServiceUsuario;
+  LId: Int64;
+begin
+  LService := TServiceUsuario.Create();
+  try
+    LId := StrToInt64Def(Req.Params.Items['id'], 0);
+
+    if LId <= 0 then
+    begin
+      Res.Send(ErroJson('ID inválido')).Status(400);
+      Exit;
+    end;
+
+    LService.GetById(LId);
+
+    if LService.qryCadastro.IsEmpty then
+    begin
+      Res.Send(ErroJson('Usuário não encontrado')).Status(404);
+      Exit;
+    end;
+
+    if LService.Delete then
+      Res.Send(TJSONObject.Create).Status(THTTPStatus.NoContent)
+    else
+      Res.Send(ErroJson('Não foi possível excluir o usuário')).Status(500);
+  finally
+     LService.Free;
+  end;
+end;
+
+procedure RegistrarRota;
+begin
+  THorse.Get('/usuarios', ListarUsuarios);
+  THorse.Get('/usuarios/:id', ObterUsuario);
+  THorse.Post('/usuarios', CadastarUsuarios);
+  THorse.Put('/usuarios/:id', AlterarUsuario);
+  THorse.Delete('/usuarios/:id', DeletarUsuario);
+end;
+
+end.

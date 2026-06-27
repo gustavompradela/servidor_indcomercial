@@ -1,0 +1,128 @@
+unit Service.Usuario;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Providers.Cadastro, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.ConsoleUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Phys.IBBase,  System.Generics.Collections;
+
+type
+  TServiceUsuario = class(TProvidersCadastro)
+    qryPesquisaCOD_USUARIO: TIntegerField;
+    qryPesquisaNOME_USUARIO: TStringField;
+    qryPesquisaNOME: TStringField;
+    qryPesquisaMASTER: TStringField;
+    qryPesquisaMASTER_ESTOQUE: TSmallintField;
+    qryPesquisaGERENTE_VENDA: TSmallintField;
+    qryPesquisaGERENTE_FINANCEIRO: TSmallintField;
+    qryPesquisaMOBILE: TSmallintField;
+    qryPesquisaGERENTE_ESTOQUE: TSmallintField;
+    qryPesquisaSITUACAO: TSmallintField;
+    qryPesquisaCANCELAR_VENDA: TSmallintField;
+    qryPesquisaCANCELAR_VENDA_ITEM: TSmallintField;
+    qryPesquisaALTERAR_VENDA_ITEM: TSmallintField;
+    qryPesquisaPAUSAR_VENDA: TSmallintField;
+    qryPesquisaCREDIARIO_LIBERAR: TSmallintField;
+    qryPesquisaGERENTE_COMPRA: TSmallintField;
+    qryPesquisaVASILHAME_LIBERAR: TSmallintField;
+    qryCadastroCOD_USUARIO: TIntegerField;
+    qryCadastroNOME_USUARIO: TStringField;
+    qryCadastroNOME: TStringField;
+    qryCadastroSENHA: TStringField;
+    qryCadastroMASTER: TStringField;
+    qryCadastroMASTER_ESTOQUE: TSmallintField;
+    qryCadastroGERENTE_VENDA: TSmallintField;
+    qryCadastroGERENTE_FINANCEIRO: TSmallintField;
+    qryCadastroMOBILE: TSmallintField;
+    qryCadastroGERENTE_ESTOQUE: TSmallintField;
+    qryCadastroSITUACAO: TSmallintField;
+    qryCadastroCANCELAR_VENDA: TSmallintField;
+    qryCadastroCANCELAR_VENDA_ITEM: TSmallintField;
+    qryCadastroALTERAR_VENDA_ITEM: TSmallintField;
+    qryCadastroPAUSAR_VENDA: TSmallintField;
+    qryCadastroCREDIARIO_LIBERAR: TSmallintField;
+    qryCadastroGERENTE_COMPRA: TSmallintField;
+    qryCadastroVASILHAME_LIBERAR: TSmallintField;
+  protected
+    function GetCamposObrigatorios: TArray<TCampoValidacao>; override;
+    function GetCamposServidor: TArray<string>; override;
+  private
+    { Private declarations }
+  public
+    function ListAll(const AParams: TDictionary<string, string>): TFDQuery; override;
+  end;
+
+var
+  ServiceUsuario: TServiceUsuario;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+function TServiceUsuario.GetCamposObrigatorios: TArray<TCampoValidacao>;
+begin
+    Result := [
+    TCampoValidacao.New('NOME',      tcTexto),
+    TCampoValidacao.New('COD_USUARIO', tcInteiro),
+  ];
+end;
+
+function TServiceUsuario.GetCamposServidor: TArray<string>;
+begin
+
+end;
+
+function TServiceUsuario.ListAll(
+  const AParams: TDictionary<string, string>): TFDQuery;
+begin
+  if AParams.ContainsKey('NOME_USUARIO') then
+     begin
+       qryPesquisa.sql.Add('AND UPPER(NOME_USUARIO) like :NOME_USUARIO');
+       qryPesquisa.ParamByName('NOME_USUARIO').AsString := '%'+ AParams.Items['NOME_USUARIO'].ToUpper +'%';
+       qryRecordCount.SQL.Add('AND UPPER(NOME_USUARIO) like :NOME_USUARIO');
+       qryRecordCount.ParamByName('NOME_USUARIO').AsString := '%'+ AParams.Items['NOME_USUARIO'].ToUpper +'%';
+     end;
+
+  if AParams.ContainsKey('NOME') then
+     begin
+       qryPesquisa.sql.Add('AND UPPER(NOME) like :NOME');
+       qryPesquisa.ParamByName('NOME').AsString := '%'+ AParams.Items['NOME'].ToUpper +'%';
+       qryRecordCount.SQL.Add('AND UPPER(NOME) like :NOME');
+       qryRecordCount.ParamByName('NOME').AsString := '%'+ AParams.Items['NOME'].ToUpper +'%';
+     end;
+
+  if AParams.ContainsKey('SITUACAO') then
+     begin
+       qryPesquisa.sql.Add('AND SITUACAO like :SITUACAO');
+       qryPesquisa.ParamByName('SITUACAO').AsString := '%'+ AParams.Items['SITUACAO'].ToUpper +'%';
+       qryRecordCount.SQL.Add('AND SITUACAO like :SITUACAO');
+       qryRecordCount.ParamByName('SITUACAO').AsString := '%'+ AParams.Items['SITUACAO'].ToUpper +'%';
+     end;
+
+  if AParams.ContainsKey('MATER_ESTOQUE') then
+     begin
+       qryPesquisa.sql.Add('AND MATER_ESTOQUE like :MATER_ESTOQUE');
+       qryPesquisa.ParamByName('MATER_ESTOQUE').AsString :=  AParams.Items['MATER_ESTOQUE'];
+       qryRecordCount.SQL.Add('AND MATER_ESTOQUE like :MATER_ESTOQUE');
+       qryRecordCount.ParamByName('MATER_ESTOQUE').AsString := '%'+ AParams.Items['MATER_ESTOQUE'].ToUpper +'%';
+     end;
+
+  if AParams.ContainsKey('MATER') then
+     begin
+       qryPesquisa.sql.Add('AND MATER like :MATER');
+       qryPesquisa.ParamByName('MATER').AsString :=  AParams.Items['MATER'];
+       qryRecordCount.SQL.Add('AND MATER like :MATER_ESTOQUE');
+       qryRecordCount.ParamByName('MATER').AsString := '%'+ AParams.Items['MATER'].ToUpper +'%';
+     end;
+
+  qryPesquisa.SQL.Add('ORDER BY COD_USUARIO');
+  Result := inherited ListAll(AParams);
+end;
+
+end.

@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 [27/junho/2026 08:18:42.599] PostmanRuntime/7.53.0 "GET /almoxarifados HTTP/1.1" 200 240
+0:0:0:0:0:0:0:1 [27/junho/2026 08:19:12.291] PostmanRuntime/7.53.0 "POST /almoxarifado HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [27/junho/2026 08:19:12.291] PostmanRuntime/7.53.0 "POST /almoxarifado HTTP/1.1" 404 9
+0:0:0:0:0:0:0:1 [27/junho/2026 08:20:59.995] PostmanRuntime/7.53.0 "GET /almoxarifados HTTP/1.1" 200 240
+0:0:0:0:0:0:0:1 [27/junho/2026 08:21:04.669] PostmanRuntime/7.53.0 "POST /almoxarifados HTTP/1.1" 201 72
+0:0:0:0:0:0:0:1 [27/junho/2026 08:21:09.018] PostmanRuntime/7.53.0 "GET /almoxarifados HTTP/1.1" 200 313
+0:0:0:0:0:0:0:1 [27/junho/2026 08:21:26.952] PostmanRuntime/7.53.0 "PUT /almoxarifados/38 HTTP/1.1" 200 70
+0:0:0:0:0:0:0:1 [27/junho/2026 08:21:32.437] PostmanRuntime/7.53.0 "GET /almoxarifados HTTP/1.1" 200 311
+0:0:0:0:0:0:0:1 [27/junho/2026 08:27:59.232] PostmanRuntime/7.53.0 "DELETE /almoxarifados/38 HTTP/1.1" 204 2
+0:0:0:0:0:0:0:1 [27/junho/2026 08:28:05.258] PostmanRuntime/7.53.0 "GET /almoxarifados HTTP/1.1" 200 240
+0:0:0:0:0:0:0:1 [27/junho/2026 08:28:22.264] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [27/junho/2026 08:51:39.260] PostmanRuntime/7.53.0 "GET /healthcheck HTTP/1.1" 200 15
+0:0:0:0:0:0:0:1 [27/junho/2026 08:51:42.948] PostmanRuntime/7.53.0 "GET /healthcheck HTTP/1.1" 200 15
+0:0:0:0:0:0:0:1 [27/junho/2026 08:51:50.525] PostmanRuntime/7.53.0 "GET /version HTTP/1.1" 200 15

@@ -22,7 +22,6 @@ begin
     LRetorno := TJSONObject.Create;
     LRetorno.AddPair('data', LService.ListAll(Req.Query.Dictionary).ToJSONArray());
     LRetorno.AddPair('records', TJSONNumber.Create(LService.GetRecordCount));
-
     Res.Send(LRetorno);
   finally
      LService.Free;

@@ -1,2 +1,82 @@
 0:0:0:0:0:0:0:1 [23/junho/2026 17:44:48.558] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 26
 0:0:0:0:0:0:0:1 [23/junho/2026 17:45:02.476] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:50:58.208] PostmanRuntime/7.53.0 "POST /produtos HTTP/1.1" 201 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:51:24.899] PostmanRuntime/7.53.0 "POST /produtos HTTP/1.1" 201 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:51:38.255] PostmanRuntime/7.53.0 "GET /produtos/5000 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:52:32.547] PostmanRuntime/7.53.0 "PUT /produtos/5000 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:53:21.795] PostmanRuntime/7.53.0 "PUT /produtos/5000 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:53:28.152] PostmanRuntime/7.53.0 "PUT /produtos/5000 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:53:35.826] PostmanRuntime/7.53.0 "GET /produtos/5000 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:54:24.145] PostmanRuntime/7.53.0 "GET /produtos/5000 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 18:54:46.757] PostmanRuntime/7.53.0 "DELETE /produtos/5000 HTTP/1.1" 204 2
+0:0:0:0:0:0:0:1 [23/junho/2026 18:54:52.523] PostmanRuntime/7.53.0 "PUT /produtos/5000 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [23/junho/2026 19:20:01.645] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 [23/junho/2026 19:20:18.445] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 19:20:41.353] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 19:21:18.222] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 19:21:42.741] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 19:22:15.027] PostmanRuntime/7.53.0 "DELETE /produtos/5001 HTTP/1.1" 204 2
+0:0:0:0:0:0:0:1 [23/junho/2026 19:22:21.820] PostmanRuntime/7.53.0 "DELETE /produtos/5000 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [23/junho/2026 19:22:28.697] PostmanRuntime/7.53.0 "DELETE /produtos/5001 HTTP/1.1" 404 34
+0:0:0:0:0:0:0:1 [23/junho/2026 19:22:34.362] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 19:23:23.528] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 19:23:42.311] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 [23/junho/2026 19:24:00.230] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 [23/junho/2026 20:48:02.467] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 [23/junho/2026 20:49:04.273] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 20:50:14.229] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 26
+0:0:0:0:0:0:0:1 [23/junho/2026 20:50:26.555] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 20:50:49.591] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 25
+0:0:0:0:0:0:0:1 [23/junho/2026 20:51:03.826] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 20:51:34.625] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 [23/junho/2026 20:51:48.907] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 20:52:50.690] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 20:53:25.677] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 23
+0:0:0:0:0:0:0:1 [23/junho/2026 20:53:42.754] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 [23/junho/2026 20:54:53.557] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 [23/junho/2026 21:07:43.306] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 21:09:01.998] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [23/junho/2026 21:10:19.344] PostmanRuntime/7.53.0 "GET /produtos/1 HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 21:11:49.061] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 21:26:10.981] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 21:26:51.217] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [23/junho/2026 21:46:46.659] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 500 26
+0:0:0:0:0:0:0:1 [23/junho/2026 21:47:43.774] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 23
+0:0:0:0:0:0:0:1 [23/junho/2026 21:47:54.909] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 21:48:27.326] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 21:49:04.216] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 21:49:25.815] PostmanRuntime/7.53.0 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:04:48.884] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:04:52.633] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:04:52.797] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:04:57.314] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:05:03.237] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:05:11.681] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:05:15.279] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:05:18.691] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:05:23.189] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:06:51.360] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:06:53.853] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:06:54.774] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:06:55.719] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:06:55.918] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:06:59.961] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:07:01.548] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:07:02.571] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:07:03.769] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:07:05.030] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:08:25.211] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:08:26.504] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:08:28.025] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:08:37.199] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:08:48.004] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:11:43.118] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:11:57.203] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:12:03.958] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:12:05.154] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:12:06.332] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:12:12.285] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:12:25.950] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:12:57.334] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:17:09.567] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
+0:0:0:0:0:0:0:1 [23/junho/2026 22:17:15.830] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 "GET /produtos HTTP/1.1" 200 0
